@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App foto gatti</title>
+  </head>
+  <body>
+<!---Contenuto principale--->
+<main>
+  <h1 id="intestazione">App Foto Gatti</h1>
+  <!---Sezione 1: foto gatti--->
+  <section id="foto">
+    <h2>Foto gatti</h2>
+    <p>
+      Tutti amano
+      <a
+        href="https://www.pexels.com/it-it/cerca/gatti%20carini/"
+        target="_blank"
+        >i gatti carini!</a
+      >
+      <!---Pexels è un ottimo sito da cui poter prendere le foto!--->
+    </p>
+    <a
+      href="https://www.pexels.com/it-it/foto/persona-che-tiene-gattino-bianco-con-collana-di-fiori-1643457/"
+      target="_blank"
+    >
+      <img
+        src="https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg"
+        alt="Gatto carino"
+        title="Gatto carino!!!!!!"
+        width="500"
+      />
+    </a>
+    <hr />
+  </section>
+  <!---Sezione 2: liste--->
+  <section id="liste">
+    <h2>Liste utili per i gatti</h2>
+    <h3><em>Cose che i gatti amano:</em></h3>
+    <ul>
+      <li>Stare in alto</li>
+      <li>Il Jazz</li>
+      <li>Giochi con i campanelli</li>
+      <li>Tiragraffi</li>
+      <li>La lasagna</li>
+    </ul>
+    <!---Immagine con didascalia--->
+    <figure>
+      <img
+        src="https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
+        width="500"
+        alt="pezzo di lasagna"
+        title="BUONA LA LASAGNA!"
+      />
+    </figure>
+    <figcaption>I gatti <strong>AMANO</strong> la lasagna!</figcaption>
+    <h3>
+      <em>Cose che i gatti <strong>ODIANO</strong> di più:</em>
+    </h3>
+    <ol>
+      <li>I rumori forti</li>
+      <li>Albero di Natale</li>
+      <li>Gli altri gatti</li>
+      <li>Cani</li>
+      <li>L'acqua</li>
+      <li>Topi</li>
+    </ol>
+  </section>
+  <!---Sezione 3: form--->
+  <section id="form">
+    <h2>Parlaci del tuo gatto!</h2>
+    <form action="https://instamiao.com/invio-foto-gatto" method="POST">
+      <fieldset>
+        <legend><strong> Il tuo gatto è da interno o esterno? </strong></legend>
+        <label>
+          <!---L'attributo checked seleziona l'elemento di default--->
+          <input
+            checked
+            id="interno"
+            type="radio"
+            name="interno-esterno"
+            value="interno"
+          />
+          Interno
+        </label>
+        <br />
+        <label>
+          <input
+            id="esterno"
+            type="radio"
+            name="interno-esterno"
+            value="esterno"
+          />
+          Esterno</label
+        >
+        <br />
+        <label>
+          <input
+            id="entrambi"
+            type="radio"
+            name="interno-esterno"
+            value="entrambi"
+          />
+          Entrambi</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>
+          <strong>
+            Quale è la personalità del tuo gatto?
+          </strong>
+        </legend>
+          <label>
+          <input
+            id="pigro"
+            type="checkbox"
+            name="personalità"
+            value="pigro"
+          />
+          Pigro</label
+        >
+        <br />
+        <label>
+          <input
+            id="socievole"
+            type="checkbox"
+            name="personalità"
+            value="socievole"
+          />
+          Socievole</label
+        >
+        <br />
+        <label>
+          <input
+            id="affettuoso"
+            type="checkbox"
+            name="personalità"
+            value="affettuoso"
+          />
+          Affettuoso</label
+        >
+        <br />
+        <label>
+          <input
+            id="territoriale"
+            type="checkbox"
+            name="personalità"
+            value="territoriale"
+          />
+          Territoriale</label
+        >
+        <br />
+        <label>
+          <input
+            id="curioso"
+            type="checkbox"
+            name="personalità"
+            value="curioso"
+          />
+          Curioso</label
+        >
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>
+          <strong>
+            Identikit gatto
+          </strong>
+        </legend>
+        <label>
+          Inserisci la foto del tuo gatto.
+          <br>
+          <!---type="file" ci permette di caricare
+          dei file, mentre l'attributo accept imposta
+          il formato accettato--->
+          <input 
+          id="fotoGatto"
+          type="file"
+          name="fotoGatto"
+          accept=".png,.jpg,.jpeg"
+          required>
+        </label>
+        <br>
+        <br>
+        <label>
+          Dicci come si chiama il gatto...
+          <br>
+        <input 
+        id="nomeGatto"
+        type="text"
+        name="nomeGatto"
+        maxlength="20"
+        placeholder="Inserisci il nome del tuo gatto...">
+        </label>
+      </fieldset>
+      <br>
+      <input type="submit" value="Invia dati!">
+      <hr>
+      <footer>
+        <h4>
+          <a href="#intestazione">
+            Torna all'inizio della pagina
+          </a>
+      </footer>
+    </form>
+  </section>
+</main>
+
+  </body>
+</html>

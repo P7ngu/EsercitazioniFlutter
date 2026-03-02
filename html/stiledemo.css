@@ -1,0 +1,91 @@
+/* Selettore universare, applica strile a tutti eleenti che accettano tali proprietà 
+primo, se non disponibile secondo,a ltrimenti terzo */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}   
+
+/* Selettore di tipo, applica stili a tutti gli elementi del tipo specificato */
+h1, h2 {
+    color: #007BFF;
+    text-align: center;
+}   
+
+body {
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Selettore di classe, applica stili a tutti gli elementi con la classe specificata */
+.highlight {  
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Selettore di ID, applica stili a un elemento con l'ID specificato */
+#main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pseudo-classe, applica stili a elementi in uno stato specifico */
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Selettore di classe per decidere quale paragrafo ha uno stile diverso, usando attirbuto classe */
+.paragraph-with-different-style {
+    color: #007BFF;
+    font-style: italic;
+}
+
+.font-size-large {
+    font-size: 1.5em;
+}   
+
+.font-esterno {
+    font-family: "Parisienne", cursive ;
+    font-size: 1.2em;
+    color: #555;
+}
+
+/*Un testo puo avere anche due classi, in questo caso si applicano entrambe le classi */
+/*in html metto class="font-esterno spaziato" */
+
+.spaziato {
+    letter-spacing: 2px;
+}
+
+/*vince sempre la dichiarazione più specifica, quindi se un elemento ha sia una classe che un id, vince l'id */
+/*e la successiva nel file CSS, sovrascriverà la precedente, se hanno la stessa specificità */
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}   
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}   
+
+/* auto layout per mobile */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+}   
+
