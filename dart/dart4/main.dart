@@ -117,6 +117,21 @@ abstract class Document implements Payable {
 
   @override
   String toString() => '$runtimeType(id: $id, items: ${_items.length})';
+
+  void printDetails() {
+  print('Tipo documento : $runtimeType');
+  print('ID             : $_id');
+  print('Creato il      : $_createdAt');
+
+  print('\nArticoli:');
+  for (final item in _items) {
+    print(
+      '- ${item.name} | qty: ${item.quantity} | unit: ${item.unitPrice.toStringAsFixed(2)} | tot: ${item.lineTotal.toStringAsFixed(2)}',
+    );
+  }
+
+  print('\nSubTotale      : ${subTotal().toStringAsFixed(2)}');
+}
 }
 
 
@@ -142,6 +157,21 @@ class Invoice extends Document with DiscountMixin {
     final vat = vatAmount(discounted);
     return discounted + vat;
   }
+
+  @override
+void printDetails() {
+  super.printDetails();
+
+  final discounted = applyDiscounts(subTotal());
+  final vat = discounted * (_vatPercent / 100);
+
+  print('Sconto %       : $discountPercent');
+  print('Sconto €       : $discountAmount');
+  print('IVA %          : $_vatPercent');
+  print('IVA €          : ${vat.toStringAsFixed(2)}');
+  print('TOTALE         : ${total().toStringAsFixed(2)}');
+  print('-----\n');
+}
 }
 
 /// Ordine: può avere una fee di spedizione (esempio) + sconti
@@ -163,6 +193,17 @@ class OrderDoc extends Document with DiscountMixin {
     final discounted = applyDiscounts(sub);
     return discounted + _shippingFee;
   }
+
+  @override
+void printDetails() {
+  super.printDetails();
+
+  print('Sconto %       : $discountPercent');
+  print('Sconto €       : $discountAmount');
+  print('Spedizione €   : ${_shippingFee.toStringAsFixed(2)}');
+  print('TOTALE         : ${total().toStringAsFixed(2)}');
+  print('---\n');
+}
 }
 
 /// Preventivo: solo stima, niente IVA, supporta sconti
@@ -174,6 +215,16 @@ class Quote extends Document with DiscountMixin {
     final sub = subTotal();
     return applyDiscounts(sub);
   }
+
+  @override
+void printDetails() {
+  super.printDetails();
+
+  print('Sconto %       : $discountPercent');
+  print('Sconto €       : $discountAmount');
+  print('TOTALE STIMATO : ${total().toStringAsFixed(2)}');
+  print('---\n');
+}
 }
 
 //REPO documenti (simulazione di un database in memoria)
@@ -199,6 +250,8 @@ class DocumentStore {
   }
 
   double grandTotal() => _docs.fold(0.0, (sum, d) => sum + d.total());
+
+
 }
 
 //Main di test
@@ -226,6 +279,10 @@ void main() {
   for (final d in store.documents) {
     print('${d.runtimeType} ${d.id} -> totale: ${d.total().toStringAsFixed(2)}');
   }
+
+  for (final d in store.documents) {
+  d.printDetails();
+  } 
 
   print('Totale complessivo: ${store.grandTotal().toStringAsFixed(2)}');
 }
