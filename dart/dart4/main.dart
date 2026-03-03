@@ -4,14 +4,6 @@ import 'invoice.dart';
 
 import 'order.dart';
 import 'quote.dart';
-
-
-
-
-
-
-
-
 //Main di test
 void main() {
   final store = DocumentStore();
