@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-const int maxLootbox = 5; // variabile globale: se voglio modificare in futuro, cambio solo qui, e si propaga ovunque
+const int maxLootbox = 10; // variabile globale: se voglio modificare in futuro, cambio solo qui, e si propaga ovunque
 
 Future<void> main() async { // main diventa async per poter usare await al suo interno, ogni await interno bloccherà l'esecuzione di main finché non sarà completato, ma non bloccherà l'intero programma
   final random = Random();
