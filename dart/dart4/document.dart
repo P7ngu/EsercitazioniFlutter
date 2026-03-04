@@ -2,6 +2,9 @@
 import 'payable.dart';
 import 'arcticle.dart';
 // Documento base, con funzionalità comuni a tutti i tipi di documento (fattura, ordine, preventivo, ecc.)
+// La classe Document è una classe astratta che rappresenta un documento commerciale generico, come una fattura, un ordine o un preventivo.
+// Contiene campi e metodi comuni a tutti i tipi di documenti, come l'id, la data di creazione, la lista degli articoli, e i metodi per calcolare il subtotale e il totale.
+// La classe Document implementa l'interfaccia Payable, che richiede l'implementazione del metodo total(), che calcola il totale da pagare per il documento.
 abstract class Document implements Payable {
   final String _id;
   final DateTime _createdAt;

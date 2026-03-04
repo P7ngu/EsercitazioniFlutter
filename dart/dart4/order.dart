@@ -1,5 +1,7 @@
 /// Ordine: può avere una fee di spedizione (esempio) + sconti
-/// 
+// L'ordine è un documento che rappresenta una richiesta di acquisto da parte di un cliente. 
+//Può includere una fee di spedizione, che rappresenta il costo aggiuntivo per la consegna dei prodotti al cliente. 
+//Inoltre, l'ordine può supportare sconti, sia in percentuale che in importo fisso, per rendere l'offerta più competitiva e attrarre i clienti.
 
 import 'document.dart';
 import 'discountMixin.dart';

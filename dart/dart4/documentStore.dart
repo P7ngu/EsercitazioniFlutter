@@ -1,6 +1,8 @@
 //REPO documenti (simulazione di un database in memoria)
 import 'document.dart';
 
+// La classe DocumentStore funge da "repository" o "database" in memoria per i documenti (fatture, ordini, preventivi, ecc).
+// Permette di aggiungere, rimuovere, cercare documenti per id, e calcolare il totale complessivo di tutti i documenti memorizzati. 
 class DocumentStore {
   final List<Document> _docs = [];
 
