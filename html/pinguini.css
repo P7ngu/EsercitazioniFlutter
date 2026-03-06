@@ -1,0 +1,273 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --container: 980px;
+
+  --bg: #f6f7fb;
+  --card: rgba(255, 255, 255, 0.92);
+  --stroke: rgba(0, 0, 0, 0.12);
+
+  --text: #111827;
+  --muted: rgba(17, 24, 39, 0.65);
+
+  --brand: #2563eb;
+  --brandHover: #1d4ed8;
+
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: radial-gradient(
+      1200px 700px at 15% 10%,
+      rgba(37, 99, 235, 0.10),
+      transparent 55%
+    ),
+    radial-gradient(
+      1000px 600px at 90% 5%,
+      rgba(16, 185, 129, 0.10),
+      transparent 55%
+    ),
+    var(--bg);
+  line-height: 1.55;
+}
+
+/* Layout */
+main {
+  width: min(var(--container), 92%);
+  margin: 18px auto 40px;
+}
+
+/* Titoli */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+
+h1#intestazione {
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+  padding: 14px 16px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+section {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Titoli speciali */
+section > h2 {
+  display: inline-block;
+  font-size: 1.25rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+h3 em {
+  color: var(--muted);
+  font-style: italic;
+}
+
+p {
+  margin: 10px 0;
+  color: rgba(17, 24, 39, 0.85);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--stroke);
+  margin: 16px 0;
+}
+
+/* Link */
+a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--brandHover);
+  text-decoration: underline;
+}
+
+/* Media */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+figure {
+  margin: 14px 0 6px;
+  padding: 10px;
+  border: 1px dashed var(--stroke);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Liste */
+ul,
+ol {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* Video */
+#videoPinguini {
+  padding-top: 0;
+}
+
+/* Form */
+form {
+  margin-top: 10px;
+}
+
+fieldset {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin: 12px 0;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+legend {
+  padding: 0 8px;
+  color: rgba(17, 24, 39, 0.9);
+}
+
+label {
+  display: inline-block;
+  margin: 6px 0;
+  color: rgba(17, 24, 39, 0.9);
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  transform: translateY(1px);
+  margin-right: 8px;
+}
+
+/* Bottone invio */
+input[type="submit"] {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--brand), #22c55e);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.20);
+}
+
+input[type="submit"]:hover {
+  filter: brightness(1.02);
+}
+
+input[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Footer / “torna su” */
+footer {
+  margin-top: 8px;
+  text-align: center;
+}
+
+footer h4 {
+  margin: 0;
+}
+
+footer a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  main {
+    margin-top: 28px;
+  }
+
+  h1#intestazione {
+    font-size: 2.3rem;
+    padding: 18px 20px;
+  }
+
+  section {
+    padding: 18px 20px;
+  }
+
+  /* Form desktop */
+  input[type="submit"] {
+    width: auto;
+    min-width: 220px;
+  }
+}

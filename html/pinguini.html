@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="App per condividere foto di pinguini.">
+      <meta name="author" content="Matteo Perotta">
+      <title>App foto pinguini</title>
+      <link rel="icon" type="image/png"
+         href="https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png">
+      </link>
+   </head>
+   <body>
+      <main>
+         <h1 id="intestazione">App Foto Pinguini</h1>
+         <section id="fotoPinguini">
+            <h2>Foto pinguini</h2>
+            <p>
+               Tutti amano
+               <a
+                  href="https://www.pexels.com/it-it/cerca/pinguini/"
+                  target="_blank"
+                  >i pinguini!</a
+                  >
+            </p>
+            <a
+               href="https://www.pexels.com/it-it/cerca/pinguino/"
+               target="_blank"
+               >
+        
+            </a>
+
+            <hr />
+               <section id="videoPinguini">
+                      <video
+    controls
+    width="640"
+  >
+    <source src="https://www.shutterstock.com/shutterstock/videos/3920060963/preview/stock-footage-two-king-penguins-walking-and-interacting-on-beach-in-falkland-islands-showing-natural-behavior-in.webm" type="video/webm" />
+    Il tuo browser non supporta il video HTML5.
+  </video>
+</section>
+ 
+         </section>
+         <section id="coseUtili">
+            <h2>Liste utili sui pinguini</h2>
+            <h3><em>Cose che i pinguini amano:</em></h3>
+            <ul>
+               <li>Nuotare</li>
+               <li>Stare in colonia</li>
+               <li>Scivolare sul ghiaccio</li>
+               <li>Il freddo (molti di loro!)</li>
+            </ul>
+            <figure>
+               <img
+                  src="https://images.pexels.com/photos/20413999/pexels-photo-20413999.jpeg"
+                  width="500"
+                  alt="Pinguino sulla neve"
+                  title="Freddo ma bello!"
+                  />
+               <figcaption>
+                  I pinguini sono <strong>ICONICI</strong> sulla neve!
+               </figcaption>
+            </figure>
+            <h3>
+               <em>Cose che i pinguini <strong>ODIANO</strong> di più:</em>
+            </h3>
+            <ol>
+               <li>Il caldo estremo</li>
+               <li>Rimanere soli troppo a lungo</li>
+               <li>I predatori</li>
+               <li>Il cibo che scarseggia</li>
+               <li>Le tempeste forti</li>
+            </ol>
+         </section>
+         <section id="form">
+            <h2>Parlaci del tuo pinguino!</h2>
+            <form action="https://instapingui.com/invio-foto-pinguino" method="POST">
+               <fieldset>
+                  <legend><strong> Il tuo pinguino vive al freddo o al caldo? </strong></legend>
+                  <label>
+                  <input
+                     checked
+                     id="freddo"
+                     type="radio"
+                     name="freddo-caldo"
+                     value="freddo"
+                     />
+                  Freddo
+                  </label>
+                  <br />
+                  <label>
+                  <input
+                     id="caldo"
+                     type="radio"
+                     name="freddo-caldo"
+                     value="caldo"
+                     />
+                  Caldo
+                  </label>
+                  <br/>
+                  <label>
+                  <input
+                     id="entrambi"
+                     type="radio"
+                     name="freddo-caldo"
+                     value="entrambi"
+                     />
+                  Entrambi
+                  </label>
+               </fieldset>
+               <fieldset>
+                  <legend><strong> Qual è lo stile del tuo pinguino? </strong></legend>
+                  <label>
+                  <input
+                     id="curioso"
+                     type="checkbox"
+                     name="stile"
+                     value="curioso"
+                     />
+                  Curioso
+                  </label>
+                  <br />
+                  <label>
+                  <input
+                     id="coraggioso"
+                     type="checkbox"
+                     name="stile"
+                     value="coraggioso"
+                     />
+                  Coraggioso
+                  </label>
+                  <br/>
+                  <label>
+                  <input
+                     id="timido"
+                     type="checkbox"
+                     name="stile"
+                     value="timido"
+                     />
+                  Timido
+                  </label>
+                  <br/>
+                  <label>
+                  <input
+                     id="chiassoso"
+                     type="checkbox"
+                     name="stile"
+                     value="chiassoso"
+                     />
+                  Chiassoso
+                  </label>
+                  <br/>
+                  <label>
+                  <input
+                     id="elegante"
+                     type="checkbox"
+                     name="stile"
+                     value="elegante"
+                     />
+                  Elegante
+                  </label>
+                  <br />
+               </fieldset>
+               <fieldset>
+                  <legend><strong> Flexa il tuo pinguino </strong></legend>
+                  <p>
+                     <b> Disclaimer serio ma non troppo: </b> <br>
+                     In Italia non puoi avere un pinguino come animale domestico.
+                     Quindi immagino si parli di peluche, giusto? Un Piplup? <br>
+                  </p>
+                  <label>
+                  Inserisci la foto del tuo pinguino.
+                  <br/>
+                  <input
+                     id="fotoPinguino"
+                     type="file"
+                     name="fotoPinguino"
+                     accept=".png,.jpg,.jpeg, .raw, .HEIC"
+                     required
+                     />
+                  </label>
+                  <br /><br />
+                  <label>
+                  Dicci come si chiama il pinguino...
+                  <br />
+                  <input
+                     id="nomePinguino"
+                     type="text"
+                     name="nomePinguino"
+                     maxlength="20"
+                     placeholder="Inserisci il nome del tuo pinguino..."
+                     />
+                  </label>
+                  <br /><br />
+                  <label for="curiositaPinguino">
+                  Raccontaci una curiosità sul tuo pinguino (opzionale)...
+                  <br />
+                  </label>
+                  <textarea
+                     id="curiositaPinguino"
+                     name="curiositaPinguino"
+                     rows="4"
+                     cols="40"
+                     maxlength="200"
+                     placeholder="Es: Ama scivolare sulla neve alle 3 di notte..."
+                     ></textarea>
+               </fieldset>
+               <br />
+               <input type="submit" value="Invia dati!" />
+            </form>
+            <hr />
+            <footer>
+               <h4>
+                  <a href="#intestazione">Torna in cima alla pagina</a>
+               </h4>
+            </footer>
+         </section>
+      </main>
+   </body>
+</html>

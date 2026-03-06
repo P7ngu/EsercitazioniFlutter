@@ -1,381 +1,230 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Film Pokémon: trailer, recensioni e novità." />
-    <meta name="author" content="Matteo Perotta" />
-
-    <title>CinePoké</title>
-
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png"
-    />
-
-    <link rel="stylesheet" href="pokemon.css" />
-  </head>
-
-  <body>
-    <div class="bg-piplup" aria-hidden="true"></div>
-    <a id="top"></a>
-
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="pokemon.html" aria-label="Vai alla home di CinePoké">
-          <img
-            class="brand__logo"
-            src="https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png"
-            alt="Piplup"
-            width="46"
-            height="46"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="brand__text">
-            <h1 class="brand__title">CinePoké</h1>
-            <p class="brand__tagline">Trailer, recensioni e uscite Pokémon</p>
-          </div>
-        </a>
-
-        <nav class="nav" aria-label="Navigazione principale">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a class="nav__link" href="about.html" target="_blank" rel="noopener noreferrer">Nuova finestra</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="contact.html">Contatti</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="container main">
-      <section class="hero">
-        <div class="hero__copy">
-          <h2>Il tuo hub per i film Pokémon</h2>
-          <p>
-            Trailer freschi, recensioni veloci e un calendario chiaro.
-            Se ti perdi un’uscita… è colpa tua 😄
-          </p>
-
-          <ul class="pill-list">
-            <li class="pill">🎬 Trailer aggiornati</li>
-            <li class="pill">📝 Recensioni brevi</li>
-            <li class="pill">📅 Uscite in arrivo</li>
-          </ul>
-
-          <div class="hero__cta">
-            <a class="btn" href="#uscite">Vedi le uscite</a>
-            <a class="btn btn--ghost" href="#trailer">Trailer della settimana</a>
-          </div>
-        </div>
-
-        <div class="hero__card">
-          <div class="stat">
-            <span class="stat__label">Selezione Autore</span>
-            <span class="stat__value">Ben 3 film</span>
-          </div>
-          <div class="stat">
-            <span class="stat__label">Sezioni disponibili</span>
-            <span class="stat__value">Trailer · Uscite · Gallery</span>
-          </div>
-          <div class="stat">
-            <span class="stat__label">Tip gratis!
-            </span>
-            <span class="stat__value">Clicca le locandine per ingrandire</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="uscite" class="card">
-        <div class="card__head">
-          <h2>Film in uscita</h2>
-          <p>Scopri i prossimi film Pokémon in arrivo.</p>
-        </div>
-
-        <div class="table-wrap" role="region" aria-label="Tabella film in uscita" tabindex="0">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Titolo</th>
-                <th scope="col">Genere</th>
-                <th scope="col" class="t-center">Durata</th>
-                <th scope="col" class="t-center">Data di uscita</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mewtwo Colpisce Ancora</td>
-                <td>Avventura</td>
-                <td class="t-center">98 min</td>
-                <td class="t-center">29 giugno 2026</td>
-              </tr>
-              <tr>
-                <td>Pokémon: I Segreti della Giungla</td>
-                <td>Fantasy</td>
-                <td class="t-center">99 min</td>
-                <td class="t-center">29 settembre 2026</td>
-              </tr>
-              <tr>
-                <td>Detective Pikachu</td>
-                <td>Live action</td>
-                <td class="t-center">104 min</td>
-                <td class="t-center">29 dicembre 2026</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="trailer" class="card">
-        <div class="card__head">
-          <h2>Trailer della settimana</h2>
-          <p>
-            Guarda il trailer qui sotto oppure cerca su
-            <a href="https://www.youtube.com/results?search_query=pokemon+movie+trailer" target="_blank" rel="noopener noreferrer">YouTube</a>.
-          </p>
-        </div>
-
-        <div class="media-grid">
-          <div class="media">
-            <h3 class="media__title">Trailer (video)</h3>
-            <video class="media__frame" controls preload="metadata">
-              <source
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                type="video/mp4"
-              />
-              Il tuo browser non supporta il video.
+   <head>
+      <!-- Aggiunta di uno sfondo con un'immagine di Piplup, altrimenti era inguardabile, non ho resistito -->
+      <style>
+         body {
+         margin: 0;
+         }
+         body::before {
+         content: "";
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-image: url("https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png");
+         background-repeat: repeat;
+         background-position: bottom right;
+         opacity: 0.3; 
+         z-index: -1;
+         }
+      </style>
+      <!-- Meta richiesti dalla traccia -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Film Pokémon: trailer, recensioni e novità.">
+      <meta name="author" content="Matteo Perotta">
+      <title>CinePoké</title>
+      <link rel="icon" type="image/png"
+         href="https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png">
+   </head>
+   <body>
+      <header>
+         <div class="titolone">
+            <a href="pokemon.html">
+               <h1>
+                  CinePoké
+                  <img src="https://media.pokemoncentral.it/wiki/thumb/9/90/Artwork0393_DLPS.png/200px-Artwork0393_DLPS.png"
+                     alt="Piplup"
+                     width="80"
+                     align="middle">
+               </h1>
+            </a>
+         </div>
+         <nav>
+            <ul>
+               <li><a href="about.html" target="_blank">Nuova finestra</a></li>
+               <li><a href="contact.html">Contatti</a></li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <div style="border: 1px solid rgb(184, 18, 134); padding: 10px; margin-top: 20px;">
+            <h2>Perché visitare il sito?</h2>
+            <ul>
+               <li>Trailer aggiornati ogni settimana</li>
+               <li>Recensioni brevi e chiare</li>
+               <li>Calendario dei film in uscita</li>
+            </ul>
+         </div>
+         <div style="border: 1px solid rgb(18, 43, 184); padding: 10px; margin-top: 20px;">
+            <h2>Film in uscita</h2>
+            <p>Scopri i prossimi film Pokémon in arrivo al cinema.</p>
+            <table border="1" width="80%" align="center" cellpadding="8" cellspacing="0" bgcolor="#f0f8ff">
+               <tr bgcolor="#ffcc00">
+                  <th>Titolo</th>
+                  <th>Genere</th>
+                  <th>Durata</th>
+                  <th>Data di uscita</th>
+               </tr>
+               <tr bgcolor="#ffffff">
+                  <td>Mewtwo Colpisce Ancora</td>
+                  <td>Avventura</td>
+                  <td align="center">98 min</td>
+                  <td align="center">29 giugno 2026</td>
+               </tr>
+               <tr bgcolor="#e6f2ff">
+                  <td>Pokémon: I Segreti della Giungla</td>
+                  <td>Fantasy</td>
+                  <td align="center">99 min</td>
+                  <td align="center">29 settembre 2026</td>
+               </tr>
+               <tr bgcolor="#ffffff">
+                  <td>Detective Pikachu</td>
+                  <td>Live action</td>
+                  <td align="center">104 min</td>
+                  <td align="center">29 dicembre 2026</td>
+               </tr>
+            </table>
+         </div>
+         <div style="border: 1px solid rgb(18, 43, 184); padding: 10px; margin-top: 20px;">
+            <h2>Trailer della settimana</h2>
+            <p>Guarda il trailer qui sotto oppure visita <a href="https://www.youtube.com/results?search_query=pokemon+movie+trailer" target="_blank">YouTube</a>.</p>
+            <video width="400" controls>
+               <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+               Il tuo browser non supporta il video.
             </video>
-          </div>
-
-          <div class="media">
-            <h3 class="media__title">Trailer (YouTube)</h3>
-            <iframe
-              class="media__frame"
-              src="https://www.youtube.com/embed/XGl9Q61RnAg"
-              title="Trailer Pokémon"
-              loading="lazy"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="card__head">
-          <h2 id="speciale">Film selezionati da Me</h2>
-        </div>
-
-        <div class="movie-grid">
-          <article class="movie">
-            <header class="movie__header">
-              <h3>Mewtwo Colpisce Ancora</h3>
-              <p class="movie__subtitle">Azione, mistero e momenti iconici</p>
-            </header>
-
-            <div class="movie__body">
-              <figure class="poster">
-                <a href="https://media.pokemoncentral.it/wiki/0/06/F22_poster_italiano.png" target="_blank" rel="noopener noreferrer">
-                  <img
-                    src="https://media.pokemoncentral.it/wiki/0/06/F22_poster_italiano.png"
-                    alt="Locandina Mewtwo Colpisce Ancora"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <figcaption>Locandina ufficiale</figcaption>
-              </figure>
-
-              <p class="review">
-                Un film ricco di azione e momenti <strong>iconici</strong>. Perfetto per chi ama battaglie intense e vibes “leggendario”.
-              </p>
-
-              <p class="meta-link">
-                <a class="link" href="https://www.imdb.com/it/title/tt8856470/" target="_blank" rel="noopener noreferrer">Scopri su IMDb →</a>
-              </p>
-
-              <h4 class="section-title">Scene dal film</h4>
-              <div class="gallery">
-                <figure class="shot">
-                  <a
-                    href="https://upload.wikimedia.org/wikipedia/it/thumb/5/52/Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg/330px-Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/it/thumb/5/52/Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg/330px-Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg"
-                      alt="Mewtwo imponente con Mew"
-                      loading="lazy"
-                      decoding="async"
-                    />
+            <iframe width="400" height="225"
+               src="https://www.youtube.com/embed/XGl9Q61RnAg"
+               title="Trailer Pokémon"
+               frameborder="0"
+               allowfullscreen>
+            </iframe>
+         </div>
+         <div style="border: 1px solid black; padding: 10px; margin-top: 20px;">
+            <h2>Film selezionati dagli Autori</h2>
+            <p>Una selezione di film Pokémon consigliati dagli autori del sito.</p>
+            <div style="border: 1px solid black; padding: 10px; margin-top: 20px;">
+               <h3>Mewtwo Colpisce Ancora</h3>
+               <h4>Un titolo che promette azione e mistero</h4>
+               <figure>
+                  <a href="https://media.pokemoncentral.it/wiki/0/06/F22_poster_italiano.png" target="_blank">
+                  <img src="https://media.pokemoncentral.it/wiki/0/06/F22_poster_italiano.png"
+                     alt="Locandina Mewtwo Colpisce Ancora"
+                     width="200" title="Locandina ufficiale del film">
                   </a>
-                  <figcaption>Mewtwo e Mew</figcaption>
-                </figure>
-
-                <figure class="shot">
-                  <a
-                    href="https://www.akibagamers.it/wp-content/uploads/2020/03/pokemon-mewtwo-colpisce-ancora-evoluzione-recensione-screenshot-12.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://www.akibagamers.it/wp-content/uploads/2020/03/pokemon-mewtwo-colpisce-ancora-evoluzione-recensione-screenshot-12.jpg"
-                      alt="Ash e amici con ologramma"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <figcaption>Locandina ufficiale del film</figcaption>
+               </figure>
+               <p>
+                  Un film ricco di azione e momenti <b>iconici</b>.
+                  Ideale per chi ama le battaglie intense. <br>
+                  <a href="https://www.imdb.com/it/title/tt8856470/" target="_blank">Scopri di più</a>
+               </p>
+               <h4>Scene dal film</h4>
+               <figure>
+                  <a href="https://upload.wikimedia.org/wikipedia/it/thumb/5/52/Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg/330px-Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/it/thumb/5/52/Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg/330px-Pok%C3%A8mon_-_Mewtwo_colpisce_ancora_-_L%27evoluzione.jpg"
+                     alt="Mewtwo imponente con Mew"
+                     width="200"   title="Mewtwo e Mew in una scena chiave">
                   </a>
-                  <figcaption>Ash e amici</figcaption>
-                </figure>
-              </div>
+                  <figcaption>Mewtwo e Mew in una scena chiave</figcaption>
+               </figure>
+               <figure>
+                  <a href="https://www.akibagamers.it/wp-content/uploads/2020/03/pokemon-mewtwo-colpisce-ancora-evoluzione-recensione-screenshot-12.jpg" target="_blank">
+                  <img src="https://www.akibagamers.it/wp-content/uploads/2020/03/pokemon-mewtwo-colpisce-ancora-evoluzione-recensione-screenshot-12.jpg"
+                     alt="Ash e amici con ologramma"
+                     width="200" title="Ash e amici con ologramma di Mewtwo">
+                  </a>
+                  <figcaption>Ash e i suoi amici</figcaption>
+               </figure>
             </div>
-          </article>
-
-          <article class="movie">
-            <header class="movie__header">
-              <h3>I Segreti della Giungla</h3>
-              <p class="movie__subtitle">Avventura nella natura, più emotivo</p>
-            </header>
-
-            <div class="movie__body">
-              <figure class="poster">
-                <a href="https://media.pokemoncentral.it/wiki/3/3e/F23_poster_italiano.png" target="_blank" rel="noopener noreferrer">
-                  <img
-                    src="https://media.pokemoncentral.it/wiki/3/3e/F23_poster_italiano.png"
-                    alt="Locandina I Segreti della Giungla"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <figcaption>Locandina ufficiale</figcaption>
-              </figure>
-
-              <p class="review">
-                Una storia più <em>emotiva</em>, immersa nella natura. Se ti piacciono le avventure “wild” è un sì facile.
-              </p>
-
-              <p class="meta-link">
-                <a class="link" href="https://www.imdb.com/it/title/tt11819890/?ref_=fn_t_1" target="_blank" rel="noopener noreferrer">Scopri su IMDb →</a>
-              </p>
-
-              <h4 class="section-title">Scene dal film</h4>
-              <div class="gallery">
-                <figure class="shot">
-                  <a
-                    href="https://upload.wikimedia.org/wikipedia/it/c/c9/Il_film_Pok%C3%A9mon_-_I_segreti_della_giungla.png"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/it/c/c9/Il_film_Pok%C3%A9mon_-_I_segreti_della_giungla.png"
-                      alt="Scena nella giungla"
-                      loading="lazy"
-                      decoding="async"
-                    />
+            <div style="border: 1px solid black; padding: 10px; margin-top: 20px;">
+               <h3>I Segreti della Giungla</h3>
+               <h4>Un titolo che promette avventure nella natura selvaggia</h4>
+               <figure>
+                  <a href="https://media.pokemoncentral.it/wiki/3/3e/F23_poster_italiano.png" target="_blank">
+                  <img src="https://media.pokemoncentral.it/wiki/3/3e/F23_poster_italiano.png"
+                     alt="Locandina I Segreti della Giungla" width="200" title="Locandina ufficiale">
                   </a>
-                  <figcaption>Scena nella giungla</figcaption>
-                </figure>
-
-                <figure class="shot">
-                  <a
-                    href="https://www.staynerd.com/wp-content/uploads/2021/10/pokemon-segreti-giungla-04.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://www.staynerd.com/wp-content/uploads/2021/10/pokemon-segreti-giungla-04.jpg"
-                      alt="Ash e Pikachu in primo piano"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <figcaption>Locandina ufficiale del film</figcaption>
+               </figure>
+               <p class="Recensione">
+                  Una storia più <i>emotiva</i>, ambientata nella natura. Ti saprà piacere se ami le avventure in un contesto naturale. <br>
+                  <a href="https://www.imdb.com/it/title/tt11819890/?ref_=fn_t_1" target="_blank">Scopri di più</a>
+               </p>
+               <h4>Scene dal film</h4>
+               <figure>
+                  <a href="https://upload.wikimedia.org/wikipedia/it/c/c9/Il_film_Pok%C3%A9mon_-_I_segreti_della_giungla.png" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/it/c/c9/Il_film_Pok%C3%A9mon_-_I_segreti_della_giungla.png"
+                     alt="Scena nella giungla" width="200" title="Scena nella giungla con protagonisti">
                   </a>
-                  <figcaption>Ash e Pikachu</figcaption>
-                </figure>
-              </div>
+                  <figcaption>Scena nella giungla con protagonisti</figcaption>
+               </figure>
+               <figure>
+                  <a href="https://www.staynerd.com/wp-content/uploads/2021/10/pokemon-segreti-giungla-04.jpg" target="_blank">
+                  <img src="https://www.staynerd.com/wp-content/uploads/2021/10/pokemon-segreti-giungla-04.jpg"
+                     alt="Scena con Ash e Pikachu" width="200" title="Scena con Ash e Pikachu in primo piano">
+                  </a>
+                  <figcaption>Ash e Pikachu in una scena emozionante</figcaption>
+               </figure>
             </div>
-          </article>
-
-          <article class="movie">
-            <header class="movie__header">
-              <h3>Detective Pikachu</h3>
-              <p class="movie__subtitle">Mistero + live action con un Pikachu unico</p>
-            </header>
-
-            <div class="movie__body">
-              <figure class="poster">
-                <a
-                  href="https://media.pokemoncentral.it/wiki/thumb/8/83/Detective_Pikachu_poster_2.jpeg/1200px-Detective_Pikachu_poster_2.jpeg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="https://media.pokemoncentral.it/wiki/thumb/8/83/Detective_Pikachu_poster_2.jpeg/1200px-Detective_Pikachu_poster_2.jpeg"
-                    alt="Locandina Detective Pikachu"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <figcaption>Locandina ufficiale</figcaption>
-              </figure>
-
-              <p class="review">
-                Un mix di mistero e avventura con un Pikachu <u>diverso dal solito</u>. Ottimo anche se non hai visto altri film Pokémon.
-              </p>
-
-              <p class="meta-link">
-                <a class="link" href="https://www.imdb.com/it/title/tt5884052/?ref_=fn_t_1" target="_blank" rel="noopener noreferrer">Scopri su IMDb →</a>
-              </p>
-
-              <h4 class="section-title">Scene dal film</h4>
-              <div class="gallery">
-                <figure class="shot">
-                  <a
-                    href="https://maxonassets.imgix.net/images/News/20191217_Detective_Pikachu_Header0.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=80"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://maxonassets.imgix.net/images/News/20191217_Detective_Pikachu_Header0.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=80"
-                      alt="Pikachu investigatore nella città"
-                      loading="lazy"
-                      decoding="async"
-                    />
+            <div style="border: 1px solid black; padding: 10px; margin-top: 20px;">
+               <h3>Detective Pikachu</h3>
+               <h4>Un titolo che promette mistero e avventura con un Pikachu unico</h4>
+               <figure>
+                  <a href="https://media.pokemoncentral.it/wiki/thumb/8/83/Detective_Pikachu_poster_2.jpeg/1200px-Detective_Pikachu_poster_2.jpeg" target="_blank">
+                  <img src="https://media.pokemoncentral.it/wiki/thumb/8/83/Detective_Pikachu_poster_2.jpeg/1200px-Detective_Pikachu_poster_2.jpeg"
+                     alt="Locandina Detective Pikachu" width="200" title="Locandina ufficiale">
                   </a>
-                  <figcaption>Pikachu in città</figcaption>
-                </figure>
-
-                <figure class="shot">
-                  <a
-                    href="https://images.nintendolife.com/cd3745bf0cb65/pikachu.large.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="https://images.nintendolife.com/cd3745bf0cb65/pikachu.large.jpg"
-                      alt="Scena d'azione in Detective Pikachu"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <figcaption>Locandina ufficiale del film</figcaption>
+               </figure>
+               <p class="Recensione">
+                  Un mix tra mistero e avventura con un Pikachu <u>diverso dal solito</u>, consigliato anche a chi non ha visto altri film Pokémon. <br>
+                  <a href="https://www.imdb.com/it/title/tt5884052/?ref_=fn_t_1" target="_blank">Scopri di più</a>
+               </p>
+               <h4>Scene dal film</h4>
+               <figure>
+                  <a href="https://maxonassets.imgix.net/images/News/20191217_Detective_Pikachu_Header0.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=80" target="_blank">
+                  <img src="https://maxonassets.imgix.net/images/News/20191217_Detective_Pikachu_Header0.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=80"
+                     alt="Pikachu investigatore nella città" width="200" title="Pikachu investigatore nella città">
                   </a>
-                  <figcaption>Scena d’azione</figcaption>
-                </figure>
-              </div>
+                  <figcaption>Pikachu in azione nella città</figcaption>
+               </figure>
+               <figure>
+                  <a href="https://images.nintendolife.com/cd3745bf0cb65/pikachu.large.jpg" target="_blank">
+                  <img src="https://images.nintendolife.com/cd3745bf0cb65/pikachu.large.jpg"
+                     alt="Scena d'azione in Detective Pikachu" width="200" title="Scena d'azione in Detective Pikachu">
+                  </a>
+                  <figcaption>Scena d'azione in Detective Pikachu</figcaption>
+               </figure>
             </div>
-          </article>
-        </div>
-      </section>
-      <a href="#top" class="back-to-top">Torna sopra ↑</a>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>Copyright Matteo Perotta © 2026</p>
-        <a class="nav__link" href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">Scopri su IMDb</a>
-      </div>
-    </footer>
-    
-  </body>
+         </div>
+         <div style="border: 1px solid gray; padding: 10px; margin-top: 20px;">
+            <h2>Utilizzo dei tag HTML</h2>
+            <ul>
+               <li><b>title</b>: titolo della pagina nella scheda del browser.</li>
+               <li><b>link rel="icon"</b>: favicon della pagina.</li>
+               <li><b>meta</b>: informazioni come codifica, autore e descrizione.</li>
+               <li><b>h1-h6</b>: titoli e sottotitoli delle sezioni.</li>
+               <li><b>p</b>: paragrafi di testo.</li>
+               <li><b>a</b>: link a pagine esterne o interne.</li>
+               <li><b>img</b>: immagini con testo alternativo (alt).</li>
+               <li><b>b, i, u</b>: evidenziazione del testo.</li>
+               <li><b>ul</b>: elenco puntato.</li>
+               <li><b>table</b>: tabella con dati strutturati.</li>
+               <li><b>video</b>: video locale/MP4 con controlli.</li>
+               <li><b>div</b>: contenitore per raggruppare parti della pagina.</li>
+            </ul>
+         </div>
+         <footer>
+            <div class="Copyright">
+               <p>Copyright Matteo Perotta © 2026</p>
+            </div>
+            <div class="IMDB">
+               <a href="https://www.imdb.com" target="_blank">Scopri su IMDb</a>
+            </div>
+         </footer>
+      </main>
+   </body>
 </html>

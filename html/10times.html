@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo di stampa di un messaggio 10 volte utilizzando JavaScript.">
+    <meta name="author" content="Matteo Perotta">
+
+    <title>Stampa Messaggio 10 Volte</title>
+</head>
+<body>
+
+    <h2>Inserisci un messaggio</h2>
+
+    <input type="text" id="messaggio" placeholder="Scrivi qui il messaggio">
+    <button onclick="stampaMessaggio()">Stampa 10 volte</button>
+
+    <div id="output"></div>
+
+    <script>
+        function stampaMessaggio() {
+            // Legge il valore inserito dall'utente
+            let testo = document.getElementById("messaggio").value;
+            
+            // Seleziona il div dove stampare il risultato
+            let outputDiv = document.getElementById("output");
+            
+            // Svuota il contenuto precedente
+            outputDiv.innerHTML = "";
+
+            // Ciclo per stampare 10 volte
+            for (let i = 1; i <= 10; i++) {
+                outputDiv.innerHTML += testo + "<br>";
+            }
+        }
+    </script>
+
+</body>
+</html>
