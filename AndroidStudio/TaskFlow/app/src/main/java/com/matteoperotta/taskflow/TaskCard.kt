@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import com.matteoperotta.taskflow.ui.theme.TaskFlowTheme
 
 // Card per un singolo task (stateless)
 
@@ -78,5 +80,21 @@ fun TaskCard(
                         MaterialTheme.colorScheme.outline
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TaskCardPreview() {
+    TaskFlowTheme {
+        TaskCard(
+            task = Task(
+                title = "Finire Poképrezzi 🚀",
+                priority = Priority.HIGH,
+                isDone = false
+            ),
+            onCardClick = {},
+            onToggleDone = {}
+        )
     }
 }
