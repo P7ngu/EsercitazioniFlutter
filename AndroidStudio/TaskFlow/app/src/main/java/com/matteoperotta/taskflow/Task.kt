@@ -7,9 +7,9 @@ import java.util.UUID
 //Label e la stringa mostrata nella UI, e color il colore ARGB che verra impostato
 
 enum class Priority (var label: String, val color: Long) {
-    LOW("Bassa", 0xFF4c4f50L),
-    MEDIUM("Media", 0xFFFFC107L),
-    HIGH ("Alta", 0xFFF44336L)
+    LOW("Chill 🟢", 0xFF81C784L),
+    MEDIUM("Attenzione 🟠", 0xFFFFB74DL),
+    HIGH ("CRITICO 🔴", 0xFFE57373L)
 }
 
 
