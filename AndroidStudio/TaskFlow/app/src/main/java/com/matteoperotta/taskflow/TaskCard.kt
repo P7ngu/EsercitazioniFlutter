@@ -11,7 +11,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.matteoperotta.taskflow.ui.theme.TaskFlowTheme
 
@@ -55,7 +54,7 @@ fun TaskCard(
                 Text(
                     text = task.priority.label,
                     style = MaterialTheme.typography.labelSmall,
-                    color = Color(task.priority.color)
+                    color = task.priority.color
                 )
             }
 

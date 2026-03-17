@@ -1,15 +1,19 @@
 package com.matteoperotta.taskflow
 
 import java.util.UUID
+import androidx.compose.ui.graphics.Color
+import com.matteoperotta.taskflow.ui.theme.PriorityHighColor
+import com.matteoperotta.taskflow.ui.theme.PriorityLowColor
+import com.matteoperotta.taskflow.ui.theme.PriorityMediumColor
 
 // Priority -enum class per la priorita del task
 // in kotlin le classi sono enum con prioprita.
 //Label e la stringa mostrata nella UI, e color il colore ARGB che verra impostato
 
-enum class Priority (var label: String, val color: Long) {
-    LOW("Chill 🟢", 0xFF81C784L),
-    MEDIUM("Attenzione 🟠", 0xFFFFB74DL),
-    HIGH ("CRITICO 🔴", 0xFFE57373L)
+enum class Priority (var label: String, val color: Color) {
+    LOW("Chill 🟢", PriorityLowColor),
+    MEDIUM("Attenzione 🟠", PriorityMediumColor),
+    HIGH ("CRITICO 🔴", PriorityHighColor)
 }
 
 
