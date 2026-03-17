@@ -91,7 +91,7 @@ fun TaskCardPreview() {
             task = Task(
                 title = "Finire Poképrezzi 🚀",
                 priority = Priority.HIGH,
-                isDone = false
+                isCompleted = false
             ),
             onCardClick = {},
             onToggleDone = {}

@@ -6,9 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,14 +20,34 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MaterialTheme {
-               TaskFlowApp()
-            }
+            TaskFlowTheme { TaskFlowApp() }
         }
     }
 }
-@Composable fun TaskFlowApp () {
-    Text("Ciao TaskFlow!")
+
+@Composable
+fun TaskFlowApp() {
+    val tasks = listOf(
+        Task(title = "Finire Poképrezzi 🚀", priority = Priority.HIGH),
+        Task(title = "Rivedere slide demo", priority = Priority.MEDIUM, isCompleted = true),
+        Task(title = "Pianificare sprint", priority = Priority.LOW)
+    )
+
+    Scaffold(
+        modifier = Modifier.fillMaxSize()
+    ) { innerPadding ->
+        LazyColumn(
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            items(tasks) { task ->
+                TaskCard(
+                    task = task,
+                    onCardClick = {},
+                    onToggleDone = {}
+                )
+            }
+        }
+    }
 }
 
 @Preview(showBackground = true)
