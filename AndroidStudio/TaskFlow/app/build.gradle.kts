@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -57,4 +59,18 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    /* Hilt dependency injection */
+    implementation("com.google.dagger:hilt-android:2.59.2")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    /* WorkManager - task in background */
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+
+    /* Datastore - preferenze utente */
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+
+    /* Lifecycle - collectAsStateWithLifecycle */
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
 }
