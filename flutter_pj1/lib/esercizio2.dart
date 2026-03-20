@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'theme_mode_toggle.dart';
 
 class UserProfile {
   const UserProfile({
@@ -115,6 +116,9 @@ class _Esercizio2PageState extends State<Esercizio2Page> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Esercizio 2'),
+        actions: const [
+          ThemeModeToggle(),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

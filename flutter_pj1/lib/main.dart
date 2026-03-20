@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'esercizio1.dart';
 import 'esercizio2.dart';
 import 'dashboard_memo_page.dart';
+import 'theme_mode_toggle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Esercizi',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: themeModeNotifier,
+      builder: (context, mode, _) {
+        return MaterialApp(
+          title: 'Esercizi',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal,
+              brightness: Brightness.light,
+            ),
+            useMaterial3: true,
+          ),
+          darkTheme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal,
+              brightness: Brightness.dark,
+            ),
+            useMaterial3: true,
+          ),
+          themeMode: mode,
+          home: const HomePage(),
+        );
+      },
     );
   }
 }
@@ -31,6 +48,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+        actions: const [
+          ThemeModeToggle(),
+        ],
       ),
       body: Center(
         child: Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'theme_mode_toggle.dart';
 
 class Esercizio1Page extends StatefulWidget {
   const Esercizio1Page({super.key});
@@ -16,6 +17,9 @@ class _Esercizio1PageState extends State<Esercizio1Page> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Esercizio 1'),
+        actions: const [
+          ThemeModeToggle(),
+        ],
       ),
       body: Center(
         child: Padding(
