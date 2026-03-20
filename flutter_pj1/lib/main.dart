@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'esercizio1.dart';
 import 'esercizio2.dart';
+import 'dashboard_memo_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +59,17 @@ class HomePage extends StatelessWidget {
                   );
                 },
                 child: const Text('Esercizio 2'),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const DashboardMemoPage(),
+                    ),
+                  );
+                },
+                child: const Text('Esercizio 3'),
               ),
             ],
           ),
