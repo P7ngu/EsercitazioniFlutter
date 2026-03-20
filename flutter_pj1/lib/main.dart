@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'esercizio1.dart';
 import 'esercizio2.dart';
-import 'dashboard_memo_page.dart';
+import 'esercizio4_city_explorer.dart';
+import 'esercizio3_dashboard_memo_page.dart';
 import 'theme_mode_toggle.dart';
 
 void main() {
@@ -90,6 +91,17 @@ class HomePage extends StatelessWidget {
                   );
                 },
                 child: const Text('Esercizio 3'),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const CityExplorerPage(),
+                    ),
+                  );
+                },
+                child: const Text('Esercizio 4 - City Explorer'),
               ),
             ],
           ),
